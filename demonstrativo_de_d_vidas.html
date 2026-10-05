@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstrativo de Valores em Aberto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        tech: {
+                            bg: '#121212',
+                            card: '#1e1e1e',
+                            cardHover: '#252525',
+                            border: '#2c2c2c',
+                            green: '#00ff66',
+                            greenDim: 'rgba(0, 255, 102, 0.1)',
+                            muted: '#a1a1aa'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #121212;
+            color: #f4f4f5;
+        }
+        .glow-green {
+            box-shadow: 0 0 20px rgba(0, 255, 102, 0.15);
+        }
+        .glow-border {
+            border: 1px solid rgba(0, 255, 102, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-tech-bg text-zinc-100 min-h-screen pb-12">
+
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-tech-bg/80 border-b border-tech-border px-4 py-4">
+        <div class="max-w-md mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 rounded-lg bg-tech-green/10 flex items-center justify-center border border-tech-green/30">
+                    <i class="fa-solid fa-shield-halved text-tech-green text-sm"></i>
+                </div>
+                <span class="font-bold tracking-wider text-sm text-zinc-200">FINANCE<span class="text-tech-green">.SYS</span></span>
+            </div>
+            <div class="flex items-center space-x-2 bg-tech-card px-3 py-1.5 rounded-full border border-tech-border text-xs text-tech-green font-medium">
+                <span class="w-2 h-2 rounded-full bg-tech-green animate-pulse"></span>
+                <span>Ativo / Outubro</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-md mx-auto px-4 pt-6 space-y-6">
+
+        <!-- Title & Deadline Card -->
+        <section class="bg-tech-card rounded-2xl p-5 border border-tech-border glow-green relative overflow-hidden">
+            <div class="absolute -right-10 -top-10 w-32 h-32 bg-tech-green/5 rounded-full blur-2xl pointer-events-none"></div>
+            
+            <div class="flex justify-between items-start mb-4">
+                <div>
+                    <span class="text-xs uppercase tracking-widest text-tech-green font-semibold">Demonstrativo Oficial</span>
+                    <h1 class="text-xl font-bold mt-1 text-white">Valores em Aberto</h1>
+                </div>
+                <div class="text-right">
+                    <span class="text-xs text-zinc-400">Vencimento Geral</span>
+                    <div class="text-sm font-bold text-red-400 flex items-center gap-1 justify-end mt-0.5">
+                        <i class="fa-regular fa-clock"></i> Antes do dia 28
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3 pt-3 border-t border-tech-border/60 text-xs">
+                <div class="bg-zinc-900/60 p-2.5 rounded-xl border border-tech-border">
+                    <span class="text-zinc-400 block mb-0.5">Devedor</span>
+                    <span class="font-semibold text-zinc-200 truncate block">Júlio César P. da Silva</span>
+                </div>
+                <div class="bg-zinc-900/60 p-2.5 rounded-xl border border-tech-border">
+                    <span class="text-zinc-400 block mb-0.5">Credor</span>
+                    <span class="font-semibold text-zinc-200 truncate block">Jalis Yudi</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary Totals -->
+        <section class="grid grid-cols-2 gap-3">
+            <div class="bg-tech-card p-4 rounded-2xl border border-tech-border relative overflow-hidden flex flex-col justify-between">
+                <div>
+                    <span class="text-xs text-zinc-400 font-medium">TOTAL COM JUROS</span>
+                    <div class="text-2xl font-extrabold text-tech-green mt-1">R$ 453,00</div>
+                </div>
+                <div class="mt-3 text-[10px] text-zinc-500 bg-tech-greenDim py-1 px-2 rounded w-fit">
+                    Montante Principal
+                </div>
+            </div>
+            <div class="bg-tech-card p-4 rounded-2xl border border-tech-border flex flex-col justify-between">
+                <div>
+                    <span class="text-xs text-zinc-400 font-medium">TOTAL SEM JUROS</span>
+                    <div class="text-xl font-bold text-zinc-300 mt-1">R$ 413,35</div>
+                </div>
+                <div class="mt-3 text-[10px] text-zinc-500 bg-zinc-800 py-1 px-2 rounded w-fit">
+                    Base Original
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Debts -->
+        <section class="space-y-3">
+            <h2 class="text-xs font-bold uppercase tracking-wider text-zinc-400 px-1">Detalhamento das Dívidas</h2>
+
+            <!-- 1ª Dívida -->
+            <div class="bg-tech-card p-4 rounded-xl border border-tech-border hover:border-tech-green/40 transition-all">
+                <div class="flex justify-between items-center mb-2">
+                    <div class="flex items-center space-x-2">
+                        <span class="w-6 h-6 rounded-md bg-zinc-900 text-xs font-bold flex items-center justify-center text-tech-green border border-tech-border">1</span>
+                        <span class="font-semibold text-sm text-zinc-200">1ª Dívida</span>
+                    </div>
+                    <span class="text-xs px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 font-medium">Pendente</span>
+                </div>
+                <div class="flex justify-between items-end text-xs pt-2 border-t border-zinc-800">
+                    <span class="text-zinc-400">Orig: R$ 100,00</span>
+                    <div class="text-right">
+                        <span class="text-[10px] text-zinc-500 block">Com juros</span>
+                        <span class="text-base font-bold text-tech-green">R$ 111,38</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2ª Dívida -->
+            <div class="bg-tech-card p-4 rounded-xl border border-tech-border hover:border-tech-green/40 transition-all">
+                <div class="flex justify-between items-center mb-2">
+                    <div class="flex items-center space-x-2">
+                        <span class="w-6 h-6 rounded-md bg-zinc-900 text-xs font-bold flex items-center justify-center text-tech-green border border-tech-border">2</span>
+                        <span class="font-semibold text-sm text-zinc-200">2ª Dívida</span>
+                    </div>
+                    <span class="text-xs px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 font-medium">Pendente</span>
+                </div>
+                <div class="flex justify-between items-end text-xs pt-2 border-t border-zinc-800">
+                    <span class="text-zinc-400">Orig: R$ 30,00</span>
+                    <div class="text-right">
+                        <span class="text-[10px] text-zinc-500 block">Com juros</span>
+                        <span class="text-base font-bold text-tech-green">R$ 33,62</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3ª Dívida -->
+            <div class="bg-tech-card p-4 rounded-xl border border-tech-border hover:border-tech-green/40 transition-all">
+                <div class="flex justify-between items-center mb-2">
+                    <div class="flex items-center space-x-2">
+                        <span class="w-6 h-6 rounded-md bg-zinc-900 text-xs font-bold flex items-center justify-center text-tech-green border border-tech-border">3</span>
+                        <span class="font-semibold text-sm text-zinc-200">3ª Dívida (Parcelada)</span>
+                    </div>
+                    <span class="text-xs px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 font-medium">Em Andamento</span>
+                </div>
+                
+                <div class="space-y-2 mt-3 text-xs bg-zinc-900/50 p-2.5 rounded-lg border border-tech-border">
+                    <div class="flex justify-between">
+                        <span class="text-zinc-400">Valor Total Original:</span>
+                        <span class="font-medium text-zinc-200">R$ 246,00</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-zinc-400">Pago em Setembro:</span>
+                        <span class="text-tech-green font-medium">R$ 133,22 (Pago)</span>
+                    </div>
+                    <div class="flex justify-between pt-2 border-t border-zinc-800">
+                        <div>
+                            <span class="font-semibold text-zinc-200 block">2ª Parcela</span>
+                            <span class="text-[10px] text-red-400">Vencimento: 28 de out</span>
+                        </div>
+                        <span class="text-sm font-bold text-tech-green">R$ 133,28</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dívida da sandália -->
+            <div class="bg-tech-card p-4 rounded-xl border border-tech-border hover:border-tech-green/40 transition-all">
+                <div class="flex justify-between items-center mb-2">
+                    <div class="flex items-center space-x-2">
+                        <span class="w-6 h-6 rounded-md bg-zinc-900 text-xs font-bold flex items-center justify-center text-tech-green border border-tech-border"><i class="fa-solid fa-shoe-prints text-[10px]"></i></span>
+                        <span class="font-semibold text-sm text-zinc-200">Dívida da Sandália</span>
+                    </div>
+                    <span class="text-xs px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 font-medium">Venc. 28/10</span>
+                </div>
+                <div class="flex justify-between items-end text-xs pt-2 border-t border-zinc-800">
+                    <span class="text-zinc-400">Orig: R$ 37,35</span>
+                    <div class="text-right">
+                        <span class="text-[10px] text-zinc-500 block">Com juros</span>
+                        <span class="text-base font-bold text-tech-green">R$ 41,44</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Outros Valores / Cancelados -->
+        <section class="bg-tech-card p-4 rounded-xl border border-tech-border space-y-3">
+            <h2 class="text-xs font-bold uppercase tracking-wider text-zinc-400">Outros Valores & Isenções</h2>
+            
+            <div class="grid grid-cols-1 gap-2 text-xs">
+                <div class="flex items-center justify-between p-2.5 rounded-lg bg-zinc-900/60 border border-tech-border">
+                    <div class="flex items-center space-x-2.5">
+                        <i class="fa-solid fa-motorcycle text-zinc-400"></i>
+                        <span class="text-zinc-300">Dívida referente à moto</span>
+                    </div>
+                    <span class="text-emerald-400 font-medium bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">Não cobrada</span>
+                </div>
+
+                <div class="flex items-center justify-between p-2.5 rounded-lg bg-zinc-900/60 border border-tech-border">
+                    <div class="flex items-center space-x-2.5">
+                        <i class="fa-brands fa-spotify text-emerald-400"></i>
+                        <span class="text-zinc-300">Spotify</span>
+                    </div>
+                    <span class="text-zinc-400 font-medium bg-zinc-800 px-2 py-0.5 rounded border border-zinc-700">Cancelado</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Observations & Special Note -->
+        <section class="bg-gradient-to-br from-tech-card to-zinc-900 p-4 rounded-xl border border-tech-border space-y-2 relative">
+            <div class="flex items-center space-x-2 text-tech-green">
+                <i class="fa-solid fa-circle-exclamation text-xs"></i>
+                <h3 class="text-xs font-bold uppercase tracking-wider">Observação Importante</h3>
+            </div>
+            <p class="text-xs text-zinc-300 leading-relaxed">
+                Existe ainda um valor separado que deverá ser pago diretamente à menina, não estando incluído nesta demonstração. Refere-se à <strong>janela que a gente tirou pra você</strong>
+            </p>
+        </section>
+
+        <!-- Instruction / Action Note -->
+        <div class="text-center pt-2 pb-4">
+            <p class="text-[11px] text-zinc-500 leading-relaxed">
+                O valor referente às dívidas deverá ser pago neste mês, respeitando impreterivelmente os vencimentos informados.
+            </p>
+        </div>
+
+    </main>
+
+    <footer class="mt-8 text-center text-xs text-zinc-600 border-t border-tech-border/40 pt-4">
+        <p>Painel de Controle Financeiro • Estilo Preto Fosco Tecnológico</p>
+    </footer>
+
+</body>
+</html>
